@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="beer.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Bierdatenbank</title>
+    <meta charset="utf-8">
+</head>
+
+
+<body id="beers">
+    <h1>Beer database</h1>
+    <nav>
+        <button @click="site_back"> < </button>
+        <span>{{count}}</span>
+        <button @click="site_forward"> > </button>
+    </nav>
+    <main lang="en-US">
+        <article class="beer" v-for="beer in beers">
+            <h2>{{beer.name}}</h2>
+            <section><h1>{{beer.tagline}}</h1></section>
+            <br>
+            <section><p>{{beer.description}}</p></section>
+            <img :src="beer.image_url">
+        </article>
+    </main>
+</body>
+
+<script src="beer.js"></script>
+
+</html>
