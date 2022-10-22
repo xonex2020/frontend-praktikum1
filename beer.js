@@ -4,7 +4,8 @@ const Beers = {
     data() {
         return {
             beers: [],
-            count: 1
+            count: 1,
+            visible: true
         }
     },
     created() {
@@ -18,6 +19,9 @@ const Beers = {
         site_forward() {
             this.count++
             getBeerData(this.count).then( response => this.beers = response);
+        },
+        popup() {
+            this.visible = !this.visible;
         }
      }
 }

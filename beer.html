@@ -9,7 +9,6 @@
     <meta charset="utf-8">
 </head>
 
-
 <body id="beers">
     <h1>Beer database</h1>
     <nav>
@@ -25,9 +24,18 @@
             <section><p>{{beer.description}}</p></section>
             <img :src="beer.image_url">
         </article>
-    </main>
+        <popup id="popup" v-for="beer in beers">
+            <div class="popup" @click.articel="popup" v-if="visible">
+                <h1>{{beer.name}}</h1>
+                <section><h2>Description</h2>{{beer.description}}</section>
+                <section><h2>Food Pairings</h2>{{beer.food_pairing}}</section>
+                <section><h2>Alcohol</h2>{{beer.abv}}</section>
+            </div>
+        </popup>
+    </main>    
 </body>
 
 <script src="beer.js"></script>
 
 </html>
+
