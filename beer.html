@@ -17,15 +17,15 @@
         <button @click="site_forward"> > </button>
     </nav>
     <main lang="en-US">
-        <article class="beer" v-for="beer in beers">
+        <article class="beer" @click.articel="popup" v-for="beer in beers">
             <h2>{{beer.name}}</h2>
             <section><h1>{{beer.tagline}}</h1></section>
             <br>
             <section><p>{{beer.description}}</p></section>
             <img :src="beer.image_url">
         </article>
-        <popup id="popup" v-for="beer in beers">
-            <div class="popup" @click.articel="popup" v-if="visible">
+        <popup v-for="beer in beers">
+            <div id="popup" v-if="visible">
                 <h1>{{beer.name}}</h1>
                 <section><h2>Description</h2>{{beer.description}}</section>
                 <section><h2>Food Pairings</h2>{{beer.food_pairing}}</section>

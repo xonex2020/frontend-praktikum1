@@ -5,7 +5,7 @@ const Beers = {
         return {
             beers: [],
             count: 1,
-            visible: true
+            visible: false
         }
     },
     created() {
